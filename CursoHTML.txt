@@ -1,0 +1,208 @@
+			Curso HTML com Guanabara
+			------------------------
+
+Referência sobre codigos de HTML e CSS
+Capítulo 1 Aula 3
+
+=====================================================================
+
+Capítulo 3  Aula 1
+
+	Montagem de site HTML
+
+	Estrutura Básica HTML
+
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+     <meta charset="UTF-8">
+     <meta name="viewport"
+     content="width=device-width,
+     initial-scale=1.0">
+     <title>Document</title>
+  </head>
+  <body>
+     <h1>Olá, mundo!</h1>
+  
+  </body>
+</html>
+
+=====================================================================
+
+PDF capítulo 5
+
+Marcas e simbolos / emojis
+
+emojipedia
+
+=====================================================================
+
+Capítulo 6 Aula 1
+
+PEGAR IMAGENS SEM COPYRIGHT
+
+Utilizar GOOGLE FONTS para Fontes de Letras
+Utilizar ADOBE COLOR para Cores de sites
+Utilizar MOCKFLOW para ter base na criação de site
+
+=====================================================================
+
+Capítulo 8 aula 3
+
+COMANDOS DE FORMATAÇÕES
+
+=====================================================================
+
+Capítulo 14
+
+		MEDIDAS DAS LETRAS E IMAGENS
+/*
+                Medidas Absolutas
+                cm, mm, in, px, pt, pc
+
+                Medidas Relativas
+                em, ex, rem, vw, vh, %
+                16px = 1em
+                */
+                font-size: 3em;
+                font-weight: bolder;
+                font-style: italic;
+                text-decoration: underline;
+                /* weidth (peso) - width (largura) - heigth (altura)
+ 
+
+                            Simplificar o comando (shorthand)
+                - font-style -> font-weidth -> font-size -> font-family
+                  (font: italic bolder 3em 'Work Sans', sans-serif;)
+
+*/
+
+=====================================================================
+
+Capítulo 15 Aula 04 – Pseudo-elementos em CSS
+
+ 		SELETORES PERSONALIZADOS
+#  =  id
+.  =  class
+:  =  pseudo-class
+::  =  pseudo-elemento
+>  =  childrem
+
+=====================================================================
+
+Capítulo 19 Aula 07
+
+		COLOCANDO IMAGEM DE FUNDO
+
+	    background-color: skyblue;
+            background-image: url('imagens/wallpaper002.jpg');
+            background-position: center center;
+	    background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+
+	    		Shorthand - background
+        color > image > position > repeat > [size] > attachment
+
+=====================================================================
+
+Capítulo 21 Aula 02
+
+			TABELA EM HTML
+
+	HIERARQUIA DE TABELA (simples)
+        	TABLE = tabela
+            	TABLE ROW (tr) = linha da tabela
+                	TABLE HEADER (th) = cabeçalho da tabela
+                	TABLE DATA (td) = dado da tabela
+
+=====================================================================
+
+Capítulo 21 Aula 03
+
+		ALINHAMENTO DE TABELA
+
+	    text-align: center; /* Alinhamento Horizontal */
+            vertical-align: top; /* Alinhamento Vertical */
+
+EXEMPLA:
+    <style>
+        td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+            vertical-align: top;
+    </style>
+
+=====================================================================
+
+Capitulo 21 Aula 04
+		
+		<!-- ANATOMINA DE TABELAS GRANDES
+            TABLE
+		CAPTION
+                THEAD
+                    TR, TD, TH
+                TBODY
+                    TR, TD, TH
+                TFOOT
+                    TR, TD, TH -->
+EX:
+    <table>
+        <thead>
+            <tr>
+                <th>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                </td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td>
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+
+=====================================================================
+
+Capitulo 21 Aula 06
+
+		COMO TRANSFORMAR UMA TABELA EM ZEBRADO
+
+	  <!-- [ODD = IMPAR or 2n-1] e [EVEN = PAR or 2n] --!>
+
+Exemple:
+        tbody > tr:nth-child(odd or 2n-1) {
+            background-color: lightgray;
+        }
+
+        tbody > tr:nth-child(even or 2n) {
+            background-color: darkgray;
+        }
+=====================================================================
+
+Capitulo 21 Aula 07
+	
+		COMO DEIXAR O CABEÇALHO FIXO NA TABELA
+
+Em table utilizar o position relative.
+
+        table {
+            position: relative;
+        }
+---------------------------------------------------------------------
+        thead > tr > th {
+            position: sticky;
+            top: -1px;
+            background-color:(Mesma cor que thead e tfoot);
+
+Obs: Não funciona em todas as web.
+
+=====================================================================
+
