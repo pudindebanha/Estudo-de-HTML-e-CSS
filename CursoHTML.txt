@@ -125,7 +125,7 @@ Capítulo 21 Aula 03
 	    text-align: center; /* Alinhamento Horizontal */
             vertical-align: top; /* Alinhamento Vertical */
 
-EXEMPLA:
+EXEMPLE:
     <style>
         td {
             border: 1px solid black;
@@ -206,3 +206,51 @@ Obs: Não funciona em todas as web.
 
 =====================================================================
 
+Capitulo 21 Aula 08
+	
+		MESCLAGEM DE CÉLULAS
+
+Para mesclar em linha utilizar o 'colspan' e para mesclar em coluna
+utilizar o 'rowspan'.
+
+Exemple:
+
+	    <table>
+        <tr>
+            <td colspan="4">A</td>
+            <td rowspan="4">B</td>
+        </tr>
+
+=====================================================================
+
+Capitulo 21 Aula 14
+
+		NÃO DEIXAR A TABELA COM ROLAGEM NA TELA
+
+Selecionar a tabela toda em uma 'div' e utilizar o overflow: auto; ou
+overflow-x e overflow-y.
+
+Exemple:
+
+        div#container {
+            overflow: auto;
+        }
+
+    <div id="container">
+        <table>
+            <colgroup>
+                <col class="amarelo">
+                <col class="vermelho" span="2">
+                <col class="amarelo">
+            </colgroup>
+            <caption>Cadastro</caption>
+            <tr>
+                <th scope="col">Nome</th>
+                <th scope="col">Sexo</th>
+                <th scope="col">Idade</th>
+                <th scope="col">Profissão</th>
+            </tr>
+        <table>
+    <div>
+
+=====================================================================
