@@ -299,3 +299,29 @@ Como tirar a barra de rolagem, so utilizar esses comandos abaixo:
             height: 0px;
 
 =====================================================================
+
+Capitulo 24 Aula 2
+
+			Como criar formulários
+
+Utilizar o comando <form> para criar formularios
+
+Para mandar os dados ao banco de dados usar o "action" dendo do <form>
+
+Depois de usar o form usar o input para colocar o tipo de dado
+
+E por final criar um input:submit para enviar os dados
+
+
+Exemple: 
+
+<form action="banco de dados" autocomplete="off">
+        <p><label for="inome">Nome:</label>
+	<input type="text" name="nome" id="inome"></p>
+	<input type="submit" value="Enviar">
+</form>
+
+=====================================================================
+        
+
+
