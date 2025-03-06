@@ -306,7 +306,7 @@ Capitulo 24 Aula 2
 
 Utilizar o comando <form> para criar formularios
 
-Para mandar os dados ao banco de dados usar o "action" dendo do <form>
+Para mandar os dados ao banco de dados usar o "action" dentro do <form>
 
 Depois de usar o form usar o input para colocar o tipo de dado
 
@@ -321,6 +321,45 @@ Exemple:
 	<input type="submit" value="Enviar">
 </form>
 
+=====================================================================
+
+Capitulo 24 Aula 3
+
+		   Existe 2 tipos de banco de dados
+
+Existe metodo o padrão GET e o o outro metodo POST
+Mas o metodo mais seguro é utilizar HTTPS (Aprender HTTPS)
+
+=====================================================================
+
+Capitulo 24 Aula 5
+
+		Como criar senhas e caixa de texto form
+
+Utilizar o "input:password" para senha
+Utilizar "size" para o tamanho da caixa de texto
+Utilizar "minlength" e "maxlength" para o min e max de letras 
+Utilizar "required" para ser obrigatório preencher a caixa de texto
+Utilizar "placeholder" para dar dica ao campo de texto
+Utilizar "value" para colocar o valor na caixa de texto sugerido.
+
+Exemple:
+
+	<form action="cadastro.php" method"POST" autocomplete="off">
+	    <div>
+		<input type:"password" name="sen" id="isen" required
+		minlength="8" maxlength="10" size="8" placeholder="nome">
+	    </div>
+	</form>
+
+=====================================================================
+
+Capítulo 24 Aula 05
+
+	Como utilizar esses elementos em HTML
+ 
+    Elementos number, month, date e time em formulários
+	      
 =====================================================================
         
 
