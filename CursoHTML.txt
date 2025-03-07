@@ -361,6 +361,106 @@ Capítulo 24 Aula 05
     Elementos number, month, date e time em formulários
 	      
 =====================================================================
+
+Capitulo 24 Aula 07
+
+	Colocar fieldset nos formularios para deixar organizados
+	e dentro de filedset colocar legend
+
+Exemple:
+
+<form action="cadastro.php" method="post" autocomplete="on">
+        <fieldset>
+            <legend>Dados Pessoais</legend>
+            <div>
+                <label for="iemail">E-mail</label>
+                <input type="email" name="email" id="iemal" required autocomplete="email">
+            </div>
+</form>
+
+=====================================================================
+
+Capitulo 24 Aula 08
+	
+	       Radio button e Checkbox no form
+
+Botão de radio deve ter o mesmo name, mas pode ter id diferente
+Exemple:
+	
+   <input type="radio" name="sexo" id="imas" checked>
+         <label for="imas">Masculino</label>
+
+   <input type="radio" name="sexo" id="ifem">
+         <label for="ifem">Feminino</label>
+
+Já o botão de Checkbox pode ter names diferentes e id também
+Exemple:
+
+<input type="checkbox" name="esfut" id="iesfut">Futebol
+
+<input type="checkbox" name="esjiu" id="iesjiu">Jiu-Jitsu
+
+=====================================================================
+
+Capitulo 24 Aula 10
+
+		Como criar um select e datalist no form
+
+Para criar um select não se deve utilizar o input, mas sim
+utilizar o <select> e para adicionar as informações deve
+utilizar o <option>.
+
+Exemple:
+
+   <form action="cadastro.php" method="get">
+	<p>
+	   <label for="iest">Estado</label>
+	   <select name="estado" id="iest">
+
+	      <option value="SP">São Paulo</option>
+	      <option value="RJ">Rio de Janeiro</option>
+	   </select>
+	</p>
+   </form>
+
+---------------------------------------------------------------------
+
+Para criar um datalist basta utilizar o <datalist com id>
+e para adicionar as informações utilizar o <option>
+
+Exemple:
+
+    <form>
+        <p>
+            <label for="iprof">Profissão:</label>
+            <input type="text" name="prof" id="iprof" list="lstprof">
+            <datalist id="lstprof">
+                <option>Administrador</option>
+                <option>Contabilista</option>
+                <option>Professor</option>
+                <option>Desenvolvedor</option>
+            </datalist>
+        </p>
+    </form>
+
+---------------------------------------------------------------------
+
+E também temos o método de msg, que é utilizando o comando
+textarea.
+
+Exemple:
+
+   <form>
+     <p>
+        <label for="imsg">Mensagem</label><br>
+        <textarea name="msg" id="imsg" cols="30" rows="5"></textarea>
+     </p>
+   </form>
+
+=====================================================================
+
+	   
+
         
 
 
