@@ -485,6 +485,62 @@ Exemple:
 
 ===================================================================================================
 
-        
+Ultimo modulo 05
+
+			Flex BOX
+
+O flex box é muito utilizado para manter o site em varias dimenções
+como colocar "display: flex;" na div do conteiner e nas caixas dentro
+dela utilizar o "flex: auto;" para se ajustar.
+
+A configuração padrão do flex é "flex-direction: row;" normalmente 
+da esquerda para a direita.
+
+Caso queira que ele fiquei da esquerda para a direita, usar 
+"flex-direction: row-reverse;"
+
+Caso queira usar em posições verticais, usar o "flex-direction: column;"
+ou "flex-direction: column-reverse;".
+
+---------------------------------------------------------------------------------
+
+Existem tambéms os Eixos (axis)
+
+o Eixo principal é o " MAIN-AXIS " na horizontal e na verticial o " CROSS-AXIS "
+
+também tem os eixos "main-start e main-end" e os "cross-start e cross-end"
 
 
+	 main-start					             main-end
+	      |     |                                                    |
+cross-start - |-----|----------------------------------------------------|
+	      |   --|--     -----                                        |			
+	      |	|   |   | |       |					 |  
+              |-|---|-- |-|-------|--------------------------------------|---  main-axis  
+              | |   |   | |       |                                      |
+	      |	  --|--     -----                                        | 
+cross-end --  |-----|----------------------------------------------------|                                                            -
+	            |
+                cross-axis 
+
+configuração para flex-direction: row; caso queira ao contrario utilizar o
+flex-direction: row-reverse; 
+
+-----------------------------------------------------------------------------------------
+
+Já o flex-wrap ele é um bloco que não quebra e se ajusta ao conteúdo dentro do conteiner
+porém dependendo do conteúdo ele é obrigado a quebrar.
+
+O padrão do flex-wrap é "flex-wrap: wrap;" e também existe as opções "nowrap" e 
+"wrap-reverse".
+
+-----------------------------------------------------------------------------------------
+
+	E para simplificar é um short-hand é so utilizar o Flex-Flow
+
+Exemple:
+	
+	flex-flow: row nowrap; 
+	flex-flow: column nowrap;
+
+===================================================================================================
