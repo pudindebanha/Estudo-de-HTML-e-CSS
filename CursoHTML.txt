@@ -487,7 +487,7 @@ Exemple:
 
 Ultimo modulo 05
 
-			Flex BOX
+			 	FLEXBOX
 
 O flex box é muito utilizado para manter o site em varias dimenções
 como colocar "display: flex;" na div do conteiner e nas caixas dentro
@@ -503,6 +503,8 @@ Caso queira usar em posições verticais, usar o "flex-direction: column;"
 ou "flex-direction: column-reverse;".
 
 ---------------------------------------------------------------------------------
+
+				FLEXBOX
 
 Existem tambéms os Eixos (axis)
 
@@ -544,3 +546,50 @@ Exemple:
 	flex-flow: column nowrap;
 
 ===================================================================================================
+
+Capitulo 27 Aula 05
+
+				      FLEXBOX
+
+    Para alinharmos os blocos do main-axis devemos usar o "justify-content" e existem varias
+formas para alinharmos oq está dentro do container.
+
+Exemple:
+	div.container > div.bloco {
+		flex-flow: row nowrap;
+		justify-content: flex-start, flex-end, center, space-between,space-evenly,
+				 space-around entre outras;
+		}
+
+justify-content = main-axis
+align-content = cross-axis
+
+Só deve utilizar o align-content em caso da utilização do "wrap" por questão da quebra de linha.
+
+---------------------------------------------------------------------------------------------------
+
+		     IMPORTANTE SALVAR ISSO - IMPORTANTE SALVAR ISSO
+
+===================================================================================================
+
+				FLEXBLOX dos itens
+
+Todos itens por padrão tem a order: 0.
+
+Você pode também utilizar o align-self para mudar o item
+Existem: auto, flex-start, flex-end, center, stretch.
+
+E também temos o flex-basis para colocar tamanho em pxs ou em auto
+que serve para a largura dos itens caso o tamanho seja grande
+
+Caso queira modificar basta utilizar o flex-shrink: 1 e flex-grow: 0
+
+shrink = encolher. 1 = sim
+grow = crescer. 0 - não
+
+ordem completa para allstack.
+
+flex: flex grow - flex-shrink - flex-basis;
+
+caso queira o valor padrão basta utilizar o flex: initial;
+caso queira que eles não se movem basta usar o flex: none;
