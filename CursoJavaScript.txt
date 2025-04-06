@@ -1,0 +1,169 @@
+			
+			Criando variavel em JS
+
+As variavel devem ter as seguintes regras.
+
+Podem começar com letra, $ ou _
+
+Não podem começar com números
+
+É possível usar letras ou números
+
+Não podem conter espaços
+
+Não podem ser palavras reservadas
+
+Exemple:
+	var n1 = 8
+	var n2 = 5
+
+===============================================================================
+
+			Tipos de variaveis
+
+number = 5 18 -12 0.5 -15.9
+
+boolean = true or false
+
+string = "Google" 'JS' `Maria`
+
+===============================================================================
+
+		Transformar número em string e string em número
+
+Para transformar string em número deve utilizar o Number.parseFloat ou Int
+Float = número quebrado (8.2) e Int = número inteiro (9)
+Ou so utilziar o Number. 
+Exemple:
+	var n1 = Number.parseFloat(window.prompt('Digite um numero: '))
+	var n2 = Number(window.prompt('Digite um numero: '))
+
+E caso queira transormar numero em string deve se utilizar ,toString() ou 
+apenas string.
+Exemple:
+	String(n)
+	n.toString()
+
+-------------------------------------------------------------------------------
+
+EXTRAS - TRANSFORMAR VALOR EM DINHEIRO
+
+Utilizar a linha de comando:
+
+n1.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})
+
+Caso queiro adicionar casas nos número usar o comando:
+
+n1.toFixed(2)
+
+===============================================================================
+
+			Tipos de Operadores JS
+
+Aritméticos ({+ = soma} - {- = subtração} - {* = multiplicação} - {/ = divisão}  
+{% = resto} - {** = potencia})
+ 
+Ordem de precedência dos fatores são  [()]  [**]  [* / %]  [+ -]
+
+Atribuição ()
+
+Relacionais ({< menor} - {> maior} - {>= maior ou igual} - {<= menor ou igual}
+{== igual} - {!= não igual/diferente} - {=== identico})
+
+Lógicos ({! negação} - {&& conjunção} - {|| disjunção})
+
+Ternário ({?} - {::})
+
+===============================================================================
+
+			Aprendendo sobre oq é DOM
+
+DOM significa Document Object Model, ou seja é a árvore genealogica e umas
+das formas de obter ela é usando o seguinte metódos:
+
+Exemple:
+	window.document.getElementById
+	window.document.getElementByName
+	window.document.getElementByTagName
+	window.document.getElementByClassName
+
+===============================================================================
+
+				CONDIÇÕES
+
+Condição simples é quanto utiliza apenas um if
+Exemple:
+	var vel = 59
+	    console.log(`A velocidade do seu carro é ${vel}Km/h!`)
+	if (vel > 60) {
+    	    console.log(`Você ultrapassou a velocidade, MULTADO!`)
+	}
+	    console.log('Use cinto de segurança!')
+
+-------------------------------------------------------------------------------
+
+Condição Composta é quanto utiliza if e else
+Eemple: 
+	var pais = 'Brasil'
+	    console.log(`Vivendo em ${pais}`)
+	if (pais == 'Brasil') {
+   	    console.log('Você é Brasileiro')
+	}
+	else {
+    	    console.log('Você é Estrangeiro')
+	}
+
+-------------------------------------------------------------------------------
+
+Condição Aninhada é quando utiliza if, else e dentro do else usa outro if
+Exemple:
+	var idade = 18
+	    console.log(`Você tem ${idade} anos.`)
+	if (idade < 16) {
+    	    console.log('Voto não obrigatório')
+	} else if (idade < 18 || idade > 65) {
+    	    console.log('Voto opcional')
+	} else {
+   	    console.log('Voto obrigatório')
+	}
+
+-------------------------------------------------------------------------------
+
+Condição Múltipla é quando utiliza switch e para quebrar as expressão tem que
+utilizar o break
+Exemple:
+	switch(diaSem) {
+    case 0:
+        console.log('Domingo')
+        break
+    case 1:
+        console.log('Segunda-Feira')
+        break
+	}
+
+===============================================================================
+
+			     Repetições em JS
+
+Ele vai repetir o comando utilizando o while até finalizar o codigo.
+
+Exemple:
+      var c = 1
+      while (c <= 10) {
+   	  console.log(`Contagem ${c}`)
+   	   c++
+     }
+
+or
+
+     var c = 1
+     do {
+    	console.log(`Contagem ${c}`)
+    	c++
+     } while (c <= 6)
+
+e para simplificar basta usar
+
+	for (var c=1; c<=10; c++) {
+	     console.log(${c})
+	}
