@@ -167,3 +167,53 @@ e para simplificar basta usar
 	for (var c=1; c<=10; c++) {
 	     console.log(${c})
 	}
+
+===============================================================================
+
+		       Variaveis compostas / VETOR
+
+Uma variavel composta ou vetor é formada pela seguintes formulas;
+
+um vetor com elementos e dentro dos elementos temos o conteúdo valor e dentro
+do contéudo temos as índice chaves.
+Ex:
+
+var vaga = [carro 0, carro 1, carro 2]
+	     0        1        2
+
+
+var vaga = vetor ou varia composta
+os conchetes [] = elementos
+os carros = conteúdo valor
+os números = índice chaves
+
+-------------------------------------------------------------------------------
+
+Caso queira adicionar mais elementos basta utilizar as seguintes formulas;
+
+vaga[3] = carro 3
+vaga.push(carro 3)
+
+-------------------------------------------------------------------------------
+
+Para ler o comprimento da vaga so utilizar a formula utilizar:
+
+vaga.length
+
+-------------------------------------------------------------------------------
+
+Para pesquisar os valores conteúdo, basta utilizar:
+
+vaga.indexOf(3)
+
+===============================================================================
+
+Estudar ainda sobre
+
+FUNCTIONS
+OBJETOS
+MODULARIZAÇÃO
+RegEx
+JSON
+AJAX
+NodeJS
