@@ -1,0 +1,276 @@
+			   Tipos primitivos MySQL
+
+1. Numéricos
+
+TINYINT (1 byte): de -128 a 127 (ou 0 a 255 sem sinal). Ex: idade.
+
+SMALLINT (2 bytes): de -32.768 a 32.767.
+
+MEDIUMINT (3 bytes): de -8.388.608 a 8.388.607.
+
+INT ou INTEGER (4 bytes): de -2 bi a 2 bi. Ex: IDs, contadores.
+
+BIGINT (8 bytes): números gigantes. Ex: valores financeiros grandes.
+
+Ponto flutuante:
+
+FLOAT: números decimais com precisão menor. Ex: nota com casas decimais.
+
+DOUBLE: mais precisão que o FLOAT.
+
+DECIMAL ou NUMERIC: valores exatos, útil pra dinheiro. 
+Ex: DECIMAL(10,2) → até 99999999.99.
+-------------------------------------------------------------------------------
+
+2. Data e hora
+
+DATE: só a data (AAAA-MM-DD).
+
+DATETIME: data e hora.
+
+TIMESTAMP: similar ao DATETIME, mas armazena o tempo como número Unix. 
+Bom pra saber quando um registro foi criado/alterado.
+
+TIME: só a hora (HH:MM:SS).
+
+YEAR: armazena apenas o ano (ex: 2025).
+-------------------------------------------------------------------------------
+
+3. Texto (Strings)
+
+CHAR(N): texto fixo, sempre ocupa N caracteres. Bom pra códigos padronizados,
+tipo CEP.
+
+VARCHAR(N): texto variável, até N caracteres. Muito usado em nomes, emails, etc
+
+TEXT: textos longos. Existem variações como: {
+
+	TINYTEXT (até 255 bytes)
+	TEXT (até 65 mil)
+	MEDIUMTEXT (até 16 milhões)
+	LONGTEXT (até 4 GB) }
+-------------------------------------------------------------------------------
+
+4. Binários (dados crus)
+
+BLOB: usado pra armazenar arquivos como imagens, vídeos, PDFs. Igual ao TEXT,
+tem variações:
+	
+	TINYBLOB, BLOB, MEDIUMBLOB, LONGBLOB.
+-------------------------------------------------------------------------------
+
+5. Booleano
+
+BOOLEAN ou BOOL: tecnicamente é um TINYINT(1), onde 0 é FALSE e 1 é TRUE.
+		
+===============================================================================
+
+
+			 Como criar um banco de dados
+
+Basta utilizar o comando: 
+
+	create database cadastro;
+-------------------------------------------------------------------------------
+
+Para criar uma database com a línguagem portuguesa com acento basta utilizar
+o comando:
+
+	create database cadastro 
+	default character set utf8mb4 
+	default collate utf8mb4_general_ci; 
+
+1. CREATE DATABASE cadastro
+
+Cria um novo banco de dados chamado cadastro. 
+Esse será o “container” onde você armazenará suas tabelas, dados e estruturas.
+-------------------------------------------------------------------------------
+
+2. DEFAULT CHARACTER SET utf8mb4
+
+Define o conjunto de caracteres padrão do banco como utf8mb4.
+
+utf8mb4 é uma versão estendida do utf8 que suporta todos os caracteres Unicode,
+inclusive emojis e símbolos de idiomas asiáticos.
+
+Muito útil para garantir compatibilidade internacional e evitar problemas com 
+acentuação, por exemplo.
+-------------------------------------------------------------------------------
+
+3. DEFAULT COLLATE utf8mb4_general_ci
+
+Define a collation (regras de comparação e ordenação de texto).
+
+utf8mb4_general_ci significa:
+
+general: é uma forma genérica de comparar textos.
+
+ci = case-insensitive, ou seja, não diferencia maiúsculas de minúsculas nas
+comparações ('a' é igual a 'A').
+
+===============================================================================
+
+			Como criar uma tabela
+
+Basta utilizar o comando:
+
+	create table pessoas;
+
+1. CREATE TABLE pessoas
+
+Cria uma nova tabela, que no caso seria dentro do "container cadastro",
+Essa será a “tabela” onde você armazenará os dados e estruturas como: id, nome,
+nascimento, sexo, peso etc.
+
+Para deixar mais segura utilize: if not exists
+
+	create table if not exists pessoas
+
+2. IF NOT EXISTS isso serve para criar uma tabela se ela ja não existir, e não 
+perder os dados da tabela caso ela ja exista
+-------------------------------------------------------------------------------
+
+Para adicionar a estrutura da tabela basta seguir as ordem de comando abaixo:
+
+   create table pessoas (
+
+	id int not null primary key auto_increment,
+	nome varchar(30) not null,
+	nascimento date,
+	sexo enum('M', 'F'),
+	peso decimal(5,2), 
+	altura decimal(3,2),
+	nacionalidade varchar(20) default 'Brasil'
+
+   ) default charset = utf8mb4;
+
+===============================================================================
+
+			Como inserir dados na tabela
+
+Basta utilizar o seguintes comandos:
+
+	insert into 'nome da tabela'
+	values;
+-------------------------------------------------------------------------------
+
+O codígo completo ficaria assim:
+
+	insert into pessoas
+	(id, nome, nascimento, sexo, peso, altura, nacionalidade)
+	values
+	(DEFAULT, 'Creusa', '1941-11-02', 'F', '65', '1.54', 'Brasil');
+
+Como o id ja está com auto_increment ao criar a tabela ele não seria necessário
+-------------------------------------------------------------------------------
+
+Caso queira simplificar o codígo, basta fazer assim:
+
+	insert into pessoas values
+	(DEFAULT, 'Creusa', '1941-11-02', 'F', '65', '1.54', 'Brasil');
+
+===============================================================================
+
+		   Como adicionar dados na tabela ja criada
+
+Basta utilizar o comando:
+
+	alter table 'nome da tabela'
+	add column 'dados + tipos primitivos';
+
+O codígo completo ficaria assim:
+
+	alter table pessoas
+	add column profissao varchar(10);
+-------------------------------------------------------------------------------
+
+Caso queira adicionar depois de algum dado bastar colocar:
+
+	alter table 'nome da tabela'
+	add column 'dados + tipos primitivos' after 'dados';
+
+O codígo completo ficaria assim:
+
+	alter table pessoas
+	add column profissao varchar(10) after nome;
+-------------------------------------------------------------------------------
+
+E se quiser colocar em primeiro basta utilizar o first:
+
+	alter table 'nome da tabela'
+	add column 'dados + tipos primitivos' first;
+
+O codígo completo ficaria assim:
+
+	alter table pessoas
+	add column profissao varchar(10) first;
+
+===============================================================================
+
+			Como remover uma coluna
+
+Basta utilizar o comando:
+
+	alter table 'nome da tabela'
+	drop column 'dados';
+-------------------------------------------------------------------------------
+
+O codígo completo ficaria assim:
+
+	alter table pessoas
+	drop column profissao;
+
+===============================================================================
+
+		   Como modificar as definições da coluna
+
+Basta utilizar o comando:
+
+	alter table 'nome da tabela'
+	modify column 'dados + tipos primitivos';
+
+O codígo completo ficaria assim:
+
+	alter table pessoas
+	modify column profissao varchar(30);
+
+===============================================================================
+
+		     Como modificar o nome da coluna
+
+Basta utilizar o comando:
+
+	alter table 'nome da tabela'
+	change column 'nome antigo' 'nome novo + tipos primitivos';
+
+O codígo completo ficaria assim:
+
+	alter table pessoas
+	change column profissao prof varchar(20);
+
+===============================================================================
+
+	 	     Como modificar o nome da tabela
+
+
+Basta utilizar o comando:
+
+	alter table 'nome da tabela'
+	rename to 'dados';
+
+O codígo completo ficaria assim:
+
+	alter table pessoas
+	rename to gafanhotos;
+
+===============================================================================
+
+
+
+
+
+
+
+
+
+

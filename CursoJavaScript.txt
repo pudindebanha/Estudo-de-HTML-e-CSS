@@ -67,10 +67,10 @@ Ordem de precedência dos fatores são  [()]  [**]  [* / %]  [+ -]
 
 Atribuição ()
 
-Relacionais ({< menor} - {> maior} - {>= maior ou igual} - {<= menor ou igual}
+RELACIONAIS ({< menor} - {> maior} - {>= maior ou igual} - {<= menor ou igual}
 {== igual} - {!= não igual/diferente} - {=== identico})
 
-Lógicos ({! negação} - {&& conjunção} - {|| disjunção})
+LÓGICOS ({! negação} - {&& conjunção} - {|| disjunção})
 
 Ternário ({?} - {::})
 
@@ -97,7 +97,7 @@ Exemple:
 	    console.log(`A velocidade do seu carro é ${vel}Km/h!`)
 	if (vel > 60) {
     	    console.log(`Você ultrapassou a velocidade, MULTADO!`)
-	}
+	} else
 	    console.log('Use cinto de segurança!')
 
 -------------------------------------------------------------------------------
@@ -183,7 +183,7 @@ var vaga = [carro 0, carro 1, carro 2]
 
 
 var vaga = vetor ou varia composta
-os conchetes [] = elementos
+os colchetes [] = elementos
 os carros = conteúdo valor
 os números = índice chaves
 
